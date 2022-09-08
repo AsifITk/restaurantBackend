@@ -74,3 +74,4 @@ router.get("/orders/:id", async (req, res) => {
 
 
 // GET /restaurants/:id/revenue?s
+module.exports = router;

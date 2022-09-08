@@ -6,8 +6,8 @@ const jwt = require("jsonwebtoken");
 const morgan = require('morgan');
 const app = express();
 const userRouter = require("./routes/userRoutes");
-// const orderRouter = require('./routes/orderRoutes')
-// const restaurantRouter = require("./routes/restaurantRoutes")
+const orderRouter = require('./routes/orderRoutes')
+const restaurantRouter = require("./routes/restaurantRoutes")
 
 //! mongoose connection setup
 mongoose
@@ -30,8 +30,8 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use("/auth", userRouter);
-// app.use("/order", orderRouter);
-// app.use("/restraurant", restaurantRouter);
+app.use("/order", orderRouter);
+app.use("/restraurant", restaurantRouter);
 app.listen(8000);
 
 
